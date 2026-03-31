@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centennial Simulations | Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --msfs-blue: #0078d4;
+            --msfs-cyan: #00e5ff;
+            --bg-deep: #050608;
+            --bg-card: #121418;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --text-muted: #8a8d91;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: #ffffff;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(5, 6, 8, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        .logo span {
+            color: var(--msfs-cyan);
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-left: 25px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 100px 5% 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-tag {
+            color: var(--msfs-cyan);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+            background: linear-gradient(to bottom, #fff 60%, #666);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto 40px auto;
+        }
+
+        .primary-btn {
+            background: var(--msfs-blue);
+            color: white;
+            padding: 14px 32px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            border-radius: 2px;
+            transition: filter 0.3s;
+            display: inline-block;
+        }
+
+        .primary-btn:hover {
+            filter: brightness(1.2);
+        }
+
+        /* --- DASHBOARD GRID --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+
+        .panel:hover {
+            border-color: var(--msfs-blue);
+        }
+
+        .panel-label {
+            color: var(--msfs-cyan);
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .panel h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .panel p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+
+        .status-dot {
+            height: 8px;
+            width: 8px;
+            background-color: #00ff88;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            box-shadow: 0 0 8px #00ff88;
+        }
+
+        .system-status {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">CENTENNIAL <span>SIMULATIONS</span></div>
+        <div class="nav-links">
+            <a href="#">Fleet</a>
+            <a href="#">Support</a>
+            <a href="#">Log In</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <span class="hero-tag">Flight Systems Online</span>
+        <h1>Precision Flight.</h1>
+        <p>Expertly crafted flight simulation hardware and software solutions based in Centennial, CO. Built for the modern aviator.</p>
+        <a href="#" class="primary-btn">Explore the Hangar</a>
+    </header>
+
+    <div class="grid">
+        <div class="panel">
+            <span class="panel-label">Avionics</span>
+            <h3>Integrated G1000 Units</h3>
+            <p>Native integration with MSFS 2024 glass cockpits for zero-latency feedback.</p>
+        </div>
+        <div class="panel">
+            <span class="panel-label">Infrastructure</span>
+            <h3>Colorado Scenery</h3>
+            <p>Custom 4K ortho-scenery for the Front Range and Rocky Mountain region.</p>
+        </div>
+        <div class="panel">
+            <span class="panel-label">Hardware</span>
+            <h3>Precision Controls</h3>
+            <p>Condition levers and landing light switches mapped for high-fidelity simulation.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="system-status">
+            <span class="status-dot"></span> System Status: All Circuits Nominal
+        </div>
+        <p style="margin-top: 20px; font-size: 0.7rem; color: #444;">&copy; 2026 Centennial Simulations. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
